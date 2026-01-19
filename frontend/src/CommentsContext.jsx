@@ -4,6 +4,8 @@ import { AuthContext } from "./AuthContext";
 const CommentContext = createContext();
 
 const CommentProvider = ({ children }) => {
+    const BASE_URL = import.meta.env.VITE_API_URL;
+
 
     const [comments, setComments] = useState([])
     const { user } = useContext(AuthContext);
@@ -24,7 +26,7 @@ const CommentProvider = ({ children }) => {
             alert('User not logged in');
             return;
         }
-        const response = await axios.post('http://localhost:3000/comment', { content, user });
+        const response = await axios.post(`${BASE_URL}/comment`, { content, user });
         try {
             if (response.status === 200) {
                 setComments([...comments, response.data]);
@@ -36,7 +38,7 @@ const CommentProvider = ({ children }) => {
 
     const fetchComments = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/comment');
+            const response = await axios.get(`${BASE_URL}/comment`);
             setComments(response.data);
         } catch (error) {
             console.log('Error fetching comments', error);
@@ -51,10 +53,9 @@ const CommentProvider = ({ children }) => {
        
         try {
 
-            await axios.delete(`http://localhost:3000/comment/${commentId}?username=${username}`);
+            await axios.delete(`${BASE_URL}/comment/${commentId}?username=${username}`);
 
-            const response = await axios.get('http://localhost:3000/comment');
-            setComments(response.data);
+            fetchComments();
         } catch (error) {
             console.log('Error', error)
         }
@@ -66,7 +67,7 @@ const CommentProvider = ({ children }) => {
         const name=userData.username;
         try{
 
-            const response=  await axios.post(`http://localhost:3000/comment/${commentId}/replies`,{content:replyContent,user:userId,name:name,originalCommentAuthor});
+            const response=  await axios.post(`${BASE_URL}/comment/${commentId}/replies`,{content:replyContent,user:userId,name:name,originalCommentAuthor});
             setComments(prevComments => {
                 return prevComments.map(comment => {
                     if (comment._id === commentId) {
@@ -84,7 +85,7 @@ const CommentProvider = ({ children }) => {
 
     const deleteReply=async(commentId,replyId)=>{
         console.log(replyId);
-        const response= await axios.delete(`http://localhost:3000/comment/${commentId}/replies/${replyId}`);
+        const response= await axios.delete(`${BASE_URL}/comment/${commentId}/replies/${replyId}`);
         fetchComments();
         
     }

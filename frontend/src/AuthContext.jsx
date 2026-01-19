@@ -1,11 +1,12 @@
 import React, { createContext, useState,useEffect} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-
 const AuthContext = createContext();
 
 
 const AuthProvider = ({ children }) => {
+    const BASE_URL = import.meta.env.VITE_API_URL;
+
     const navigate=useNavigate();
     const [details, setDetails] = useState({
         username: '',
@@ -25,7 +26,7 @@ const AuthProvider = ({ children }) => {
 
     const handleSignup = async () => {
         try {
-            const response = await axios.post('http://localhost:3000/signup', details);
+            const response = await axios.post(`${BASE_URL}/signup`, details);
             if(response.status===200){
                 const userData=response.data;
                 setUser(userData);
@@ -50,7 +51,7 @@ const AuthProvider = ({ children }) => {
 
     const handleSignIn=async()=>{
         try{
-            const response= await axios.post('http://localhost:3000/login',details);
+            const response= await axios.post(`${BASE_URL}/login`,details);
             if(response.status===200){
                 const userData=response.data;
                 setUser(userData);
