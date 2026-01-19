@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+
+}
+
+
+body.light {
+  --background-color: white;
+  --text-color: black;
+  --sidebar-background-color: #f0f0f0;
+  --sidebar-text-color: black;
+  --sidebar-active-background-color: #d0d0d0;
+  --sidebar-active-text-color: black;
+  --sidebar-hover-color: #0066CC;
+}
+
+body.dark {
+  --background-color: #161c24;
+  --text-color: white;
+  --sidebar-background-color: #0d121c;
+  --sidebar-text-color: white;
+  --sidebar-active-background-color: #5c5c5c;
+  --sidebar-active-text-color: white;
+  --sidebar-hover-color: #66b2ff;
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add other CSS variables for elements as needed */
+
+
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px; /* Adjust body font size for smaller screens */
+  }
+
+  /* Adjustments for light mode */
+  body.light {
+    --sidebar-background-color: #f0f0f0;
+    --sidebar-active-background-color: #d0d0d0;
+    --sidebar-hover-color: #0066CC;
+  }
+
+  /* Adjustments for dark mode */
+  body.dark {
+    --sidebar-background-color: #0d121c;
+    --sidebar-active-background-color: #5c5c5c;
+    --sidebar-hover-color: #66b2ff;
+  }
+}

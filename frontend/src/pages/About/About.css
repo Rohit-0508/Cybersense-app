@@ -1,0 +1,74 @@
+.about{
+    padding: 50px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.about-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.about-logo img{
+    width: 65%;
+    padding-top: 40px;
+}
+.about .about-logo p{
+    font-size: 1rem;
+    padding: 16px;
+}
+.about-me h1,.about-purpose h1,.about-journery h1,.about-why h1,.about-contact h1{
+    color: #2ecc71;
+}
+.about .about-me, .about-contact,.about-journery,.about-purpose,.about-why{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.about-me img{
+    width: 120px;
+    padding: 10px;
+}
+.about-me p span{
+    font-size: 18px;
+    padding: 8px;
+    font-weight: 400;
+}
+
+.about-purpose ul li{
+    margin-left: 24px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+.social-icons a:hover::after{
+  content: attr(title); /* Display the title attribute as tooltip text */
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -25px; /* Adjust vertical position to place tooltip below image */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.social-icons a img{
+    width: 32px;
+    padding-top: 20px;
+}
+
+@media (max-width:500px){
+    .about-logo img{
+        width: 65%;
+    }
+}

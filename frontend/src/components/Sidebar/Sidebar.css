@@ -1,0 +1,92 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  background: white;
+  padding-top: 35px;
+  height: calc(100vh - 60px); /* Adjust height to account for the navbar height */
+  position: fixed;
+  top: 60px; /* Set to the height of the navbar */
+  left: 0;
+  overflow-y: auto; 
+  z-index: 9; /* Ensure sidebar is below the navbar */
+  color: rgb(53, 53, 54);
+}
+
+.sidebar p{
+  padding-left: 10%;
+  padding-bottom: 3%;
+}
+.sidebar ul {
+  padding-left: 8%;
+  list-style-type: none;
+  
+  position: relative;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  padding-left: 20px; /* Adjust to give space for the SVG */
+  position: relative;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.sidebar ul li::before {
+  content: '';;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-image: url('../../assets/sidebar.svg'); /* Path to your SVG */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sidebar ul li.active::before {
+  background-image: url('../../assets/activeSidebar.svg'); /* Path to your active SVG */
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+  color: #0066CC;
+}
+
+
+
+@media (max-width: 500px) {
+  .home-content .sidebar {
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+  .home-content.sidebar-open .sidebar{
+    display: block;
+    transform: translateX(0);
+    
+  }
+
+  .navbar-left .button-clicked.active {
+    background: #3494f5;
+    color: white;
+  }
+
+  .main-content {
+    transition: transform 0.3s ease;
+    transform: translateX(0); /* Ensure main content is not shifted by default */
+  }
+
+  .main-content.active {
+    transform: translateX(60%); /* Adjust for sidebar width */
+  }
+
+  
+  
+}

@@ -1,0 +1,218 @@
+/* Comment Section CSS */
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.c{
+  margin-top: 40px;
+}
+.comment {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.box {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.comment-container {
+  margin-bottom: 20px;
+}
+
+.content-form {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-reply-form {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+}
+
+.content-form-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-reply-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-delete-pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-data {
+  margin-right: 10px;
+}
+
+.content-data h2 {
+  font-size: 1rem;
+  margin: 0;
+  color: #333333;
+}
+
+.content-data p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: #555555;
+}
+
+.del {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.del img {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.content-delete-pair:hover .del img {
+  opacity: 1;
+}
+.reply:hover img{
+  opacity: 1;
+}
+.reply-btn {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.reply-btn:hover {
+  background-color: #2980b9;
+}
+
+.reply-container {
+  margin-top: 10px;
+}
+
+.reply-container form {
+  display: flex;
+  align-items: center;
+}
+
+.reply-container textarea {
+  width: calc(100% - 80px);
+  height: 40px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.send {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.send img {
+  width: 25px;
+  height: 25px;
+}
+
+.replies {
+  margin-top: 10px;
+  padding-left: 20px;
+  border-left: 2px solid #eeeeee;
+}
+
+.reply {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+}
+
+.reply h5 {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #3498db;
+}
+
+.reply p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: #555555;
+}
+
+.input-comment {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-form textarea {
+  width: 100%;
+  height: 60px;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+.reply .del img{
+  opacity: 0;
+}
+.reply:hover .del img{
+  opacity: 1;
+}
+
+.input-form button {
+  background-color: #2ecc71;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-form button:hover {
+  background-color: #27ae60;
+}

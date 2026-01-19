@@ -1,0 +1,40 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .home-content {
+    display: flex;
+    flex-grow: 1;
+    margin-top: 60px;
+    
+    overflow-y: auto; 
+  }
+  .content{
+    margin-left:380px ;
+    margin-top: 50px;
+    max-width: 800px;
+    
+  }
+  .blur-background{
+    filter: blur(1px);
+    
+  }
+
+
+
+  @media (max-width: 500px) {
+    .home-content {
+      margin-top: 20px; /* Adjust top margin for smaller screens */
+    }
+  
+    .content {
+      margin-left: 20px; /* Adjust left margin for smaller screens */
+      margin-right: 20px; /* Adjust right margin for smaller screens */
+    }
+    .home-content .sidebar-open{
+      display: blocks;
+    }
+  }
+  
