@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './Authentication.css';
 import { AuthContext } from '../../AuthContext';
-import loadingImage from '../../assets/loading.gif'; 
 
 const Authentication = () => {
     const [authState, setAuthState] = useState('Sign In');
@@ -24,15 +23,15 @@ const Authentication = () => {
         e.preventDefault();
         setLoading(true);
         await handleSignIn();
-        setDetails({ ...details, email:'', password: '' });
+        setDetails({ ...details, email: '', password: '' });
         setLoading(false);
     };
 
     return (
         <div className='fullscreen'>
-            {loading && 
+            {loading &&
                 <div className='login-spinner'>
-                    <img src={loadingImage} alt="Loading..." />
+                    <img src='/load.gif' alt="Loading..." />
                 </div>
             }
             <div className={`container ${authState === 'Sign Up' ? 'right-panel-active' : ''}`} id="container" style={{ display: loading ? 'none' : 'flex' }}>

@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #dadada;
+    background:white;
 }
 .overlay button , .form-container-auth button {
     border-radius: 20px;
