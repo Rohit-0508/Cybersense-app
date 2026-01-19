@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Authentication.css';
 import { AuthContext } from '../../AuthContext';
-import loading from '../../assets/loading.gif'; 
+import loadingImage from '../../assets/loading.gif'; 
 
 const Authentication = () => {
     const [authState, setAuthState] = useState('Sign In');
@@ -32,7 +32,7 @@ const Authentication = () => {
         <div className='fullscreen'>
             {loading && 
                 <div className='login-spinner'>
-                    <img src={loading} alt="Loading..." />
+                    <img src={loadingImage} alt="Loading..." />
                 </div>
             }
             <div className={`container ${authState === 'Sign Up' ? 'right-panel-active' : ''}`} id="container" style={{ display: loading ? 'none' : 'flex' }}>
